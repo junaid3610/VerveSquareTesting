@@ -22,7 +22,6 @@ public class ChromBrowserBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		Reporter.log(driver.getTitle());
 		
-		
 			
 	}
 	
