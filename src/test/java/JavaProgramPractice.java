@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class JavaProgramPractice {
 	
@@ -196,11 +197,123 @@ public class JavaProgramPractice {
 		
 		
 					// print first letter of each words in the string
-		String s = "I Love Java Coding";
-		String[] a = s.split(" ");							// output -> ILJC
-		for(int i=0;i<a.length;i++) {
-			System.out.print(a[i].charAt(0));		
+//		String s = "I Love Java Coding";
+//		String[] a = s.split(" ");							// output -> ILJC
+//		for(int i=0;i<a.length;i++) {
+//			System.out.print(a[i].charAt(0));		
+//		}
+		
+		
+					// Identify the leap year
+//		int year=101;
+//		if(year%4==0) {
+//			System.out.println(year+" is leap year");
+//		}													// Output -> 101 is not leap year
+//		else {
+//			System.out.println(year+" is not leap year");
+//		}
+		
+		
+		
+					// write a programme to calculate the profit		
+//		int buy =10; int sell =15;
+//		int profit;		 						// output -> the profit is 5
+//		profit= sell-buy;
+//		System.out.println("the profit is "+profit);
+		
+					// print the number of vowels present in the string
+//		String s= "Hello java programming ";
+//		for( char c: s.toCharArray()) {
+//			switch(c) {
+//				case 'a':				// output -> e o a a o a i 
+//				case 'e':
+//				case 'i':
+//				case 'o':
+//				case 'u':
+//					System.out.print(c+" ");
+//					break;
+//			}
+//		}
+		
+		
+//		// Arrange random order array in descending order
+//		int a[]= {12,10,11,5,19,2,4};
+//		Arrays.sort(a);   // sort method convert in ascending order
+//		for(int i=a.length-1;i>=0;i--) {		// output -> 19 12 11 10 5 4 2 
+//			System.out.print(a[i]+" ");
+//		}
+		
+//		// sort string in alphabetic order
+//		String s= "rock";						// output -> ckor
+//		char[] a = s.toCharArray();
+//		Arrays.sort(a);
+//		System.out.println(new String(a));
+		
+		
+		// missing number in Array
+//		int a[]= {1,2,3,4};
+//		int sum1=0;
+//		for(int i =0;i<a.length;i++) {
+//			sum1=sum1+a[i];
+//			
+//		}											// output -> 5 is missing
+//		
+//		int sum2=0;
+//		for(int i=1;i<=5;i++) {
+//			sum2=sum2+i;
+//		}
+//		System.out.println(sum2-sum1+" is missing");
+		
+		
+		// Find maximum and minimum number in the array
+//		int a[]= {12,4,5,11,20};
+//		int max=a[0];
+//		for(int i=0;i<a.length;i++) {
+//			if(max<=a[i]) {
+//				max=a[i];
+//			}									// output -> maximum value in the array-> 20
+//		}
+//		System.out.println("maximum value in the array-> "+max);
+			
+//		// to find minimum value
+//		int min=a[0];
+//		for(int i=0;i<a.length;i++) {			// ouput -> minimum value is -> 4
+//			if(min>a.length) {
+//				min=a[i];
+//			}
+//		}
+//		System.out.println("minimum value is -> "+min);
+		
+	
+//		// Print average in the array
+//		int a[] = {12, 4, 5, 11, 20};
+//		int sum = 0;
+//		for(int no : a) {
+//		    sum += no; 						 // output -> average is -> 10.4 
+//		}
+//		double avg = (double) sum / a.length;  // Cast 'sum' to double to get a precise average
+//		System.out.println("average is -> " + avg);  // Concatenate the average to the string
+
+		// Print even and odd numbers in the array
+		int a[] = {12, 4, 5, 11, 20};
+		int even = 0;
+		int odd = 0;
+
+		for (int i = 0; i < a.length; i++) {
+		    if (a[i] % 2 == 0) {  					// output -> Even numbers: 3
+		        even++;								//			 Odd numbers: 2
+		    } else {
+		        odd++;
+		    }
 		}
+		
+
+		System.out.println("Even numbers: " + even);
+		System.out.println("Odd numbers: " + odd);
+
+		
+		
+		
 		
 		
 		
