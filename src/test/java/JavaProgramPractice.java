@@ -313,28 +313,6 @@ public class JavaProgramPractice {
 
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 	
