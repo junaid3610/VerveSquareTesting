@@ -29,7 +29,7 @@ public class MyntraTesting {
 		 driver.findElement(By.xpath("//div[@class=\"search-searchProductsContainer row-base\"]//ul/li[13]")).click();
 		
 		// to click on add to bag
-	//	 Thread.sleep(2000); 
+		 //	 Thread.sleep(2000); 
 		 driver.findElement(By.xpath("//div[text()=\"ADD TO BAG\"]")).click();
 		 
 		 

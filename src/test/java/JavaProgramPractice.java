@@ -295,22 +295,42 @@ public class JavaProgramPractice {
 //		System.out.println("average is -> " + avg);  // Concatenate the average to the string
 
 		// Print even and odd numbers in the array
-		int a[] = {12, 4, 5, 11, 20};
-		int even = 0;
-		int odd = 0;
+//		int a[] = {12, 4, 5, 11, 20};
+//		int even = 0;
+//		int odd = 0;
+//
+//		for (int i = 0; i < a.length; i++) {
+//		    if (a[i] % 2 == 0) {  					// output -> Even numbers: 3
+//		        even++;								//			 Odd numbers: 2
+//		    } else {
+//		        odd++;
+//		    }
+//		}
+//		
+//
+//		System.out.println("Even numbers: " + even);
+//		System.out.println("Odd numbers: " + odd);
 
-		for (int i = 0; i < a.length; i++) {
-		    if (a[i] % 2 == 0) {  					// output -> Even numbers: 3
-		        even++;								//			 Odd numbers: 2
-		    } else {
-		        odd++;
-		    }
-		}
+			// Write a programme to print the number and calculate the printed number
 		
-
-		System.out.println("Even numbers: " + even);
-		System.out.println("Odd numbers: " + odd);
-
+		String s = "a1B2c3D4e5";
+	    
+	    // Extract the digits from the string
+	    String digits = s.replaceAll("[^0-9]", "");
+	    System.out.println(digits+" is the number in the string");
+	    
+	    int sum = 0;							// output -> 12345 is the number in the string
+	    										//        -> Sum of digits in the string: 15
+	    // Calculate the sum of digits
+	    for (int i = 0; i < digits.length(); i++) {
+	        sum += Character.getNumericValue(digits.charAt(i));
+	    }
+	    
+	    // Output the sum
+	    System.out.println("Sum of Number in the string: " + sum);
+		
+		
+		
 		
 		
 	}
