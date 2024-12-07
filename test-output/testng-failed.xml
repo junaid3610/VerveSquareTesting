@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FailTestcasesSreenshot">
+      <class name="ExcelDataForMultiple.SauceLabLoginWithMultipleDataSet">
         <methods>
-          <include name="TearDown"/>
-          <include name="fail"/>
-          <include name="VerifyTitle"/>
-          <include name="Setup"/>
+          <include name="rediffLoginTest"/>
         </methods>
-      </class> <!-- FailTestcasesSreenshot -->
+      </class> <!-- ExcelDataForMultiple.SauceLabLoginWithMultipleDataSet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
