@@ -26,19 +26,22 @@ public class ThinkingTesterFormWithMultipleData {
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheet("TesterRegistration");
 			int rowcount= sheet.getLastRowNum();   // to find how many rows are present
-			int cellcount= sheet.getRow(1).getLastCellNum();  
+			int cellcount= sheet.getRow(1).getLastCellNum();    // to find how many Columns in 1st row are present
 			System.out.println("row count: "+rowcount+ " column count:"+cellcount);
 			
 			for(int i=1;i<=rowcount;i++) 
 			{
 				XSSFRow celldata = sheet.getRow(i);
-				String FirstName = celldata.getCell(0).getStringCellValue();
-				String Lastname = celldata.getCell(1).getStringCellValue();
-				String Email = celldata.getCell(2).getStringCellValue();
-				String Password = celldata.getCell(3).getStringCellValue();
+				String FirstName = celldata.getCell(0).getStringCellValue();  //this will check on 0 column
+				
+				String Lastname = celldata.getCell(1).getStringCellValue(); //this will check on 1 column
+				
+				String Email = celldata.getCell(2).getStringCellValue(); //this will check on 2 column
+				
+				String Password = celldata.getCell(3).getStringCellValue(); //this will check on 3 column
 				
 				
-				driver.findElement(By.id("firstName")).clear();
+				driver.findElement(By.id("firstName")).clear();      // clear method will clear the previous data
 				driver.findElement(By.id("firstName")).sendKeys(FirstName);
 				
 				driver.findElement(By.id("lastName")).clear();
