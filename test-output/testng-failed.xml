@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ExcelDataForMultiple.SauceLabLoginWithMultipleDataSet">
+      <class name="AutomationRegistrationForm.RagistrationForm">
         <methods>
-          <include name="rediffLoginTest"/>
+          <include name="TestingRegistrationForm"/>
         </methods>
-      </class> <!-- ExcelDataForMultiple.SauceLabLoginWithMultipleDataSet -->
+      </class> <!-- AutomationRegistrationForm.RagistrationForm -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,6 +10,7 @@ public class RediffLoginTestandSauceLabLoginTest {
 	
 	public WebDriver driver;
 	
+	// Rediff Login
 	
 	@Test(priority = 1,dataProvider = "Rediff",dataProviderClass = ExcelData.class)
 	public void rediffLoginTest(String username, String password) {
@@ -20,7 +21,6 @@ public class RediffLoginTestandSauceLabLoginTest {
 		driver.findElement(By.id("login1")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.className("signinbtn")).click();
-		
 	
 	}
 	

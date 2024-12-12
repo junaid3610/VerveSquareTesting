@@ -16,6 +16,7 @@ public class ExcelData {
 	// Step 3 :- if you edit the excel sheet in local it will not make no difference to the excel sheet
 	// which is copied here. so delete the excel sheet from eclipse and copy and paste the updated excel sheet here.	
 	// Step 8 :- creating data provider	
+	
 	@DataProvider(name="Rediff")
 	public Object[][] getRediffExcelData() throws IOException {
 		Object[][] data = ExcelData.readFromExcelRediffData("Login");
@@ -71,7 +72,8 @@ public class ExcelData {
 		}
 		return data;
 		}
-	//================= for another excel sheet fetching the data=========
+	
+	//================= for another excel sheet fetching the data =========
 	
 	
 	public static Object[][] readFrExcelSauceLoginusernames(String sheetname) throws IOException {				
