@@ -1,18 +1,30 @@
 package ExcelDataForMultiple;
 
+import java.io.File;
 import java.io.FileInputStream;
+
 import java.io.IOException;
 import java.time.Duration;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test {
 
@@ -45,6 +57,10 @@ public class Test {
 		String PhNumber = String.valueOf(PhN);
 		System.out.println("Phone Number is- "+PhNumber);	
 		
+		////fetching data for Password				
+		FileInputStream ps= new FileInputStream("C:\\Users\\admin\\Desktop\\Rediff Data.xlsx");
+		String Password = WorkbookFactory.create(ps).getSheet("TesterRegistration").getRow(1).getCell(3).getStringCellValue();
+		System.out.println("Password is- "+Password);
 		
 		
 			WebDriver driver = new ChromeDriver();
@@ -69,6 +85,7 @@ public class Test {
 		driver.findElement(By.xpath("//div[@id=\"msdd\"]")).click();
 		//click on english language
 		driver.findElement(By.xpath("//div[@style=\"display: block;\"]//li[8]")).click();
+		
 		// Click on an element outside the dropdown to close the list
 		WebElement outsideElement = driver.findElement(By.xpath("//body")); // Or any other specific element
 		outsideElement.click();
@@ -80,10 +97,50 @@ public class Test {
 		Thread.sleep(2000);
 		
 		// select Counrty from the list
-		WebElement ctr = driver.findElement(By.xpath("//select[@id=\"countries\"]"));
-		driver.switchTo().frame(0);
-		Select Counrty= new Select(ctr);
-		Counrty.selectByVisibleText("India");
+		WebElement cntr = driver.findElement(By.xpath("(//select[@type=\"text\"])[2]"));
+		Select counrty = new Select(cntr);
+		counrty.selectByVisibleText("Select Country");
+		
+		// to click on India 
+		driver.findElement(By.xpath("//span[@class=\"select2-selection select2-selection--single\"]")).click();
+		driver.findElement(By.xpath("//ul[@id=\"select2-country-results\"]//li[6]")).click();
+		
+		// select year box
+		WebElement yr = driver.findElement(By.xpath("//select[@id=\"yearbox\"]"));
+		Select year = new Select(yr);
+		year.selectByVisibleText("1996");
+		
+		//select month box
+		WebElement mnth = driver.findElement(By.xpath("//select[@ng-model=\"monthbox\"]"));
+		Select month = new Select(mnth);
+		month.selectByVisibleText("June");
+		
+		//select day box
+		WebElement d = driver.findElement(By.xpath("//select[@ng-model=\"daybox\"]"));
+		Select day = new Select(d);
+		day.selectByVisibleText("23");
+			
+		// scrolling down
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, 1000);");
+		
+		// Password 
+		driver.findElement(By.xpath("(//input[@type=\"password\"])[1]")).sendKeys(Password);
+		
+		// Confirm Password 
+		driver.findElement(By.xpath("(//input[@type=\"password\"])[2]")).sendKeys(Password);
+		
+		// taking the screenshot
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File dest = new File("C:\\Users\\admin\\Desktop\\Music\\Screenshottesting.jpg");
+		FileUtils.copyFile(src, dest);
+		
+	
+		//click on Refresh button by using Explicit wait
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));			
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("Button1"))).click();
+		
+		
 		
 		
 		
