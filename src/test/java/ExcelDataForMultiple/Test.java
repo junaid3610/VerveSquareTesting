@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -57,7 +58,7 @@ public class Test {
 		String PhNumber = String.valueOf(PhN);
 		System.out.println("Phone Number is- "+PhNumber);	
 		
-		////fetching data for Password				
+		//fetching data for Password				
 		FileInputStream ps= new FileInputStream("C:\\Users\\admin\\Desktop\\Rediff Data.xlsx");
 		String Password = WorkbookFactory.create(ps).getSheet("TesterRegistration").getRow(1).getCell(3).getStringCellValue();
 		System.out.println("Password is- "+Password);
@@ -140,7 +141,42 @@ public class Test {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));			
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("Button1"))).click();
 		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class=\"navbar-collapse collapse navbar-right\"]//li[4]")).click();
+		driver.findElement(By.xpath("//a[text()=\"Alerts\"]")).click();
 		
+		// click to for alert pop-up
+		driver.findElement(By.xpath("//button[@onclick=\"alertbox()\"]")).click();
+		// switching webdriver focus to alert
+		Alert al = driver.switchTo().alert();
+		System.out.println("The Alert Test is -> "+al.getText());
+		al.accept();
+		
+		driver.findElement(By.xpath("(//a[@class=\"analystic\"])[3]")).click();
+		driver.findElement(By.xpath("//button[@onclick=\"promptbox()\"]")).click();
+	// switching to another alert	
+		Alert a = driver.switchTo().alert();
+		System.out.println(a.getText());
+		a.dismiss();
+		
+	//click on the Practice site
+		driver.findElement(By.xpath("//a[text()=\"Practice Site\"]")).click();
+		
+	//click on shop
+		driver.findElement(By.xpath("//ul[@class=\"main-nav\"]//li[2]")).click();
+		
+	// to do registration and fill email
+		driver.findElement(By.name("email")).sendKeys(email);
+	// to fill password	
+		driver.findElement(By.xpath("//input[@id=\"reg_password\"]")).sendKeys(Password);
+		
+	// click on the Register button
+		driver.findElement(By.xpath("(//input[@type=\"submit\"])[2]")).click();
+	// navigating back to main
+		driver.navigate().back();
+		
+	// click on the shop
+		driver.findElement(By.xpath("//a[text()=\"Shop\"]")).click();
 		
 		
 		
