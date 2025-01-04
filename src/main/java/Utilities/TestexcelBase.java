@@ -24,7 +24,7 @@ public class TestexcelBase {
 
 	}
 	
-	@Test(priority = 2,dataProvider = "Rediff",dataProviderClass = excelBasedata.class)
+	@Test(priority = 2,dataProvider = "Rediff",dataProviderClass = excelBasedata.class)   // excelBasedata this is the class name where the fetching data code is written
 	public void SauceLab(String username, String password) {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
