@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutomationRegistrationForm.RagistrationForm">
+      <class name="Utilities.saucelogin">
         <methods>
-          <include name="TestingRegistrationForm"/>
+          <include name="SauceLab" invocation-numbers="4"/>
         </methods>
-      </class> <!-- AutomationRegistrationForm.RagistrationForm -->
+      </class> <!-- Utilities.saucelogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
