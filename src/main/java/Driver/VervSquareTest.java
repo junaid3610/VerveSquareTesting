@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 public class VervSquareTest {
 	
-	 WebDriver driver;
+	 WebDriver driver;   
 
 	    @BeforeTest
 	    public void setUp() {

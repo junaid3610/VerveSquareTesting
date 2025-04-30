@@ -25,7 +25,28 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>2.0.9</version>
 		</dependency>
+		<!-- Rest Assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.3.0</version>
+			<scope>test</scope>
+		</dependency>
 
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JSON Handling -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.15.0</version>
+		</dependency>
 
 
 		<dependency>

@@ -23,7 +23,7 @@ public class DataFromConfigFile {
 		// to access the config File
 		FileInputStream fis = new FileInputStream("C:\\Users\\admin\\eclipse-workspace\\VerveSquareTesting1\\src\\main\\java\\MyData\\Data.properties");
 		Properties p = new Properties();
-		// to load thi file
+		// to load thi file 
 		p.load(fis);          
 		p.getProperty("browser");
 		String Myurl = p.getProperty("url");

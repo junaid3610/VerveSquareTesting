@@ -1,15 +1,8 @@
 package BasicJavaPractice;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
 
 public class Java {
 	
@@ -23,8 +16,41 @@ public class Java {
 //				sum +=Character.getNumericValue(a.charAt(i));
 //		
 //			}System.out.println(sum);
+//		
+//				String b = s.replaceAll("[^A-Z]", "");
+//				System.out.println(b);
+		
+
+	// write a programme "ABC123abc@" print small, capital, number and special character from the given string,
+		
+		 // Input string
+        String input = "ABC123abc@";
+        // StringBuilder objects to store categorized characters
+        StringBuilder smallLetters = new StringBuilder();
+        StringBuilder capitalLetters = new StringBuilder();
+        StringBuilder numbers = new StringBuilder();
+        StringBuilder specialCharacters = new StringBuilder();
+
+        // Iterate through each character in the string
+        for (char ch : input.toCharArray()) {
+            if (Character.isLowerCase(ch)) {
+                smallLetters.append(ch); // Append lowercase letters, Append method is used to add data in the String builder
+            } else if (Character.isUpperCase(ch)) {
+                capitalLetters.append(ch); // Append uppercase letters
+            } else if (Character.isDigit(ch)) {         // character is wrapper class,provides utility methods
+                numbers.append(ch); // Append digits
+            } else {
+                specialCharacters.append(ch); // Append special characters
+            }
+        }
+
+        // Print results
+        System.out.println("Small Letters: " + smallLetters);
+        System.out.println("Capital Letters: " + capitalLetters);
+        System.out.println("Numbers: " + numbers);
+        System.out.println("Special Characters: " + specialCharacters);
 
 	
-		
-	}		
+	}
+	
 }
