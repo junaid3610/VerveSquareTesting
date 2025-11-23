@@ -29,7 +29,7 @@ public class AutoPractice1 {
 
 	        Thread.sleep(2000);
 		
-		
+	
 		
 	}
 
